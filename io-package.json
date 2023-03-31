@@ -1,25 +1,21 @@
 {
     "common": {
         "name": "systa",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "news": {
             "0.1.0": {
                 "en": "initial release",
                 "de": "Erstveröffentlichung"
+            },
+            "0.1.1": {
+                "en": "add bufferTempTop and bufferTempBottom",
+                "de": "Status bufferTempTop und bufferTempBottom hinzugefügt"
             }
         },
         "title": "Systa",
         "desc": {
             "en": "systa",
-            "de": "System",
-            "ru": "система",
-            "pt": "sistema",
-            "nl": "systeem",
-            "fr": "système",
-            "it": "sista",
-            "es": "sistema",
-            "pl": "system",
-            "zh-cn": "系统"
+            "de": "System"
         },
         "authors": [
             "a4albers"

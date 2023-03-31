@@ -49,6 +49,28 @@ class Systa extends utils.Adapter {
             },
             native: {},
         });
+        await this.setObjectNotExistsAsync("bufferTempTop", {
+            type: "state",
+            common: {
+                name: "bufferTempTop",
+                type: "number",
+                role: "value",
+                read: true,
+                write: false,
+            },
+            native: {},
+        });
+        await this.setObjectNotExistsAsync("bufferTempBottom", {
+            type: "state",
+            common: {
+                name: "bufferTempBottom",
+                type: "number",
+                role: "value",
+                read: true,
+                write: false,
+            },
+            native: {},
+        });
 
         // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
         // this.subscribeStates("testVariable");
@@ -65,7 +87,7 @@ class Systa extends utils.Adapter {
         // this.log.info("check group user admin group admin: " + result);
 
         updateInterval = setInterval(() => {
-            http.get(this.config.systaPiUrl + '/SystaREST/waterheater', (res) => {
+            http.get(this.config.systaPiUrl + '/SystaREST/status', (res) => {
                 const { statusCode } = res;
                 const contentType = res.headers['content-type'];
 
@@ -93,7 +115,9 @@ class Systa extends utils.Adapter {
                     try {
                         const parsedData = JSON.parse(rawData);
 
-                        this.setState("current_temperature", parsedData.current_temperature, true);
+                        this.setState("current_temperature", parsedData.hotWaterTemp, true);
+                        this.setState("bufferTempTop", parsedData.bufferTempTop, true);
+                        this.setState("bufferTempBottom", parsedData.bufferTempBottom, true);
                     } catch (e) {
                         console.error(e.message);
                     }
