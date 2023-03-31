@@ -1,0 +1,11 @@
+{
+    "i18n": true,
+    "type": "panel",
+    "items": {
+        "systaPiUrl": {
+            "type": "text",
+            "label": "systaPiUrl",
+            "newLine": true
+        }
+    }
+}

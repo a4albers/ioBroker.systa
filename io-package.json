@@ -1,0 +1,65 @@
+{
+    "common": {
+        "name": "systa",
+        "version": "0.1.0",
+        "news": {
+            "0.1.0": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung"
+            }
+        },
+        "title": "Systa",
+        "desc": {
+            "en": "systa",
+            "de": "System",
+            "ru": "система",
+            "pt": "sistema",
+            "nl": "systeem",
+            "fr": "système",
+            "it": "sista",
+            "es": "sistema",
+            "pl": "system",
+            "zh-cn": "系统"
+        },
+        "authors": [
+            "a4albers"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "systa.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/a4albers/ioBroker.systa/main/admin/systa.png",
+        "readme": "https://github.com/a4albers/ioBroker.systa/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "metering",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=3.3.22"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.13"
+            }
+        ]
+    },
+    "native": {
+        "systaPiUrl": "http://192.168.178.65:1337"
+    },
+    "objects": [],
+    "instanceObjects": []
+}
